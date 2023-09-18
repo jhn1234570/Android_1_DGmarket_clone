@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_home"
+        android:title="@string/menu_home"
+        android:icon="@drawable/selector_bnv_home" />
+    <item android:id="@+id/menu_townlife"
+        android:title="@string/menu_townlife"
+        android:icon="@drawable/selector_bnv_townlife" />
+    <item android:id="@+id/menu_nearby"
+        android:title="@string/menu_nearby"
+        android:icon="@drawable/selector_bnv_nearby" />
+    <item android:id="@+id/menu_chatting"
+        android:title="@string/menu_chatting"
+        android:icon="@drawable/selector_bnv_chatting" />
+    <item android:id="@+id/menu_my"
+        android:title="@string/menu_my"
+        android:icon="@drawable/selector_bnv_my" />
+</menu>
