@@ -13,7 +13,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:padding="15">
+        android:padding="15dp">
         <TextView
             android:id="@+id/tv_location"
             android:layout_width="wrap_content"
@@ -75,14 +75,14 @@
         app:layout_constraintTop_toBottomOf="@id/cl_top_appbar"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@id/cl_item_1"
+        android:id="@+id/cl_item_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        app:layout_constraintTop_toBottomOf="@+id/item_1_layout">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/iv_item_home_thumbnail_1"
@@ -126,15 +126,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="서울특별시 광진구 화양동"
+                android:textColor="@color/gray"
                 android:textSize="15dp"
-                android:textColor="#787070" />
+                tools:ignore="TextSizeCheck" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10,000원"
                 android:textSize="15dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/gray"/>
 
         </LinearLayout>
 
@@ -143,56 +145,61 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="2dp"
+            android:orientation="horizontal"
             android:gravity="center_vertical"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="@+id/ll_item_home_like_1"
             app:layout_constraintEnd_toStartOf="@+id/ll_item_home_like_1">
 
             <ImageView
-                android:id="@+id/iv_item_home_comment"
-                android:layout_width="wrap_content"
-                android:layout_height="15dp"
-                android:src="@drawable/ic_home_item_comment" />
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_home_item_comment"
+                android:adjustViewBounds="true">
+
+            </ImageView>
 
             <TextView
-                android:id="@+id/tv_item_home_comment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1"
-                android:textColor="@color/black"
-                android:textSize="12dp" />
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:text="  1"
+                android:textSize="17dp">
+
+            </TextView>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_home_item_like"
+                android:adjustViewBounds="true">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:text="  1"
+                android:textSize="17dp">
+
+            </TextView>
+
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@id/ll_item_home_like_1"
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <ImageView
-                android:id="@id/ll_item_home_like_1"
-                android:layout_width="wrap_content"
-                android:layout_height="13dp"
-                android:src="@drawable/ic_home_item_like" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1"
-                android:textColor="#8C8484"
-                android:textSize="12dp" />
-
-
-        </LinearLayout>
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/item_1_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="15dp"
@@ -243,82 +250,63 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="서울특별시 광진구 화양동"
-                android:textSize="15dp"
-                android:textColor="#787070" />
+                android:textColor="@color/gray"
+                android:textSize="15dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10,000원"
                 android:textSize="15dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/dark_gray"/>
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll_item_home_comment_2"
-            android:layout_width="10dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="2dp"
-            android:gravity="center_vertical"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="@+id/ll_item_home_like_2"
-            app:layout_constraintEnd_toStartOf="@+id/ll_item_home_like_2">
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@id/ll_item_home_like_2"
+            android:id="@+id/ll_item_home_like_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_home_item_comment">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:text="  1"
+                android:textSize="17dp">
+
+            </TextView>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_home_item_like">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:text="  1"
+                android:textSize="17dp">
+
+            </TextView>
+
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tv_item_home_comment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1"
-            android:textColor="@color/black"
-            android:textSize="12dp"
-            app:layout_constraintStart_toEndOf="@+id/iv_item_home_comment"
-            tools:layout_editor_absoluteY="75dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1"
-            android:textColor="#8C8484"
-            android:textSize="12dp"
-            tools:layout_editor_absoluteX="336dp"
-            tools:layout_editor_absoluteY="89dp" />
-
-        <ImageView
-            android:id="@+id/iv_item_home_comment"
-            android:layout_width="20dp"
-            android:layout_height="14dp"
-            android:layout_marginTop="84dp"
-            android:src="@drawable/ic_home_item_comment"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="281dp" />
-
-        <ImageView
-            android:id="@id/ll_item_home_like_2"
-            android:layout_width="15dp"
-            android:layout_height="13dp"
-            android:src="@drawable/ic_home_item_like"
-            tools:layout_editor_absoluteX="329dp"
-            tools:layout_editor_absoluteY="84dp" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>>
-
-
-
-
+</androidx.constraintlayout.widget.ConstraintLayout>
