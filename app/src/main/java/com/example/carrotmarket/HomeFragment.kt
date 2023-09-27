@@ -22,7 +22,7 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
         binding.ivAlarm.setOnClickListener{
-            val intent = Intent(requireContext(), Stuff_info_activity::class.java)
+            val intent = Intent(requireContext(), Alert_info_activity::class.java)
             startActivity(intent)
         }
 
