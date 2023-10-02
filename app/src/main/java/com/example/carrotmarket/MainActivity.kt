@@ -30,10 +30,6 @@ class MainActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction().replace(R.id.main_frm, ChattingFragment()).commit()
                     return@setOnItemSelectedListener true
                 }
-                R.id.menu_my -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.main_frm, MyCarrotFragment()).commit()
-                    return@setOnItemSelectedListener true
-                }
                 else -> {
                     return@setOnItemSelectedListener true
                 }

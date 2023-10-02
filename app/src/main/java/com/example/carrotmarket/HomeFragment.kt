@@ -18,11 +18,11 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(layoutInflater)
         //기능추가
         binding.item1Layout.setOnClickListener{
-            val intent = Intent(requireContext(), Stuff_info_activity::class.java)
+            val intent = Intent(requireContext(), StuffInfoActivity::class.java)
             startActivity(intent)
         }
         binding.ivAlarm.setOnClickListener{
-            val intent = Intent(requireContext(), Alert_info_activity::class.java)
+            val intent = Intent(requireContext(), AlertInfoActivity::class.java)
             startActivity(intent)
         }
 

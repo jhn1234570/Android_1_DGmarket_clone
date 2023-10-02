@@ -5,4 +5,6 @@
     <color name="orange">#F44336</color>
     <color name="gray">#A19E9E</color>
     <color name="dark_gray">#FF4E4848</color>
+    <color name="white_gray">#F2F3F7</color>
+    <color name="ivory">#EAEBEC</color>
 </resources>

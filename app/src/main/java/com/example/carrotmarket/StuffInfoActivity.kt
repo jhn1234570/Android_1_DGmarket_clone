@@ -2,15 +2,15 @@ package com.example.carrotmarket
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.carrotmarket.databinding.FragmentMyBinding
+import com.example.carrotmarket.databinding.ActivityStuffInfoBinding
 
-class Stuff_info_activity : AppCompatActivity() {
-    lateinit var binding: FragmentMyBinding
+class StuffInfoActivity : AppCompatActivity() {
+    lateinit var binding: ActivityStuffInfoBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FragmentMyBinding.inflate(layoutInflater)
+        binding = ActivityStuffInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.backBtn.setOnClickListener {
+        binding.backButton.setOnClickListener {
             finish()
         }
 

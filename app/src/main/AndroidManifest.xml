@@ -13,16 +13,10 @@
         android:theme="@style/Theme.MyApplication."
         tools:targetApi="31">
         <activity
-            android:name=".Alert_info_activity"
+            android:name=".AlertInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".fragment_alert"
-            android:exported="false" />
-        <activity
-            android:name=".Stuff_info_activity"
-            android:exported="false" />
-        <activity
-            android:name=".Stuff_infoActivity"
+            android:name=".StuffInfoActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
