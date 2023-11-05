@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_1_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+                android:id="@+id/iv_item_home_thumbnail_2"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:elevation="0dp"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/user_thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/carrot_image" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:id="@+id/tv_item_home_contents_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toEndOf="@+id/iv_item_home_thumbnail_2"
+                app:layout_constraintTop_toTopOf="@+id/iv_item_home_thumbnail_2">
+
+                <TextView
+                    android:id="@+id/tv_wanna_trade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="거래하실분 구합니다"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_user_residence"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="서울특별시 광진구 화양동"
+                    android:textColor="@color/gray"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10,000원"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark_gray"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_item_home_like_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_home_item_comment">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/tv_buyer_comment"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:text="  1"
+                    android:textSize="17dp">
+
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/item_iv"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_home_item_like">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/tv_user_like"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:text=" 1"
+                    android:textSize="15dp">
+
+                </TextView>
+
+
+            </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
