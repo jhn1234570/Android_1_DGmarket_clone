@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.carrotmarket.databinding.ItemHomeProductBinding
 
-class ProductAdapter(val productList: ArrayList<ProductInfo>) :
+class ProductAdapter(val productList: ArrayList<ProductInfo>) : // Arraylist 대신 그냥 list 넣음
     RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
 
     private lateinit var itemClickListener: OnItemClickListener
@@ -29,8 +29,8 @@ class ProductAdapter(val productList: ArrayList<ProductInfo>) :
 
         fun bind(productInfo: ProductInfo) {
             // TODO: item_home_product.xml 에 작성한 View와 productInfo 클래스와 binding 시키기
-            binding.tvWannaTrade.text = productInfo.title
-            binding.tvUserResidence.text = productInfo.residence
+            binding.tvWannaTrade.text = productInfo.title // 이제 ProductInfo에서 binding 한거 가져와서 textview에 바인딩 하기
+            binding.tvUserResidence.text = productInfo.residence // 7주차 ->> productentity 사용
             binding.tvPrice.text = productInfo.price
             binding.tvBuyerComment.text = productInfo.comment
             binding.tvUserLike.text = productInfo.like
@@ -55,4 +55,8 @@ class ProductAdapter(val productList: ArrayList<ProductInfo>) :
         // 이 때 매개변수로 productList라는 ArrayList의 position에 위치하는 항목을 넘겨준다.
         holder.bind(productList[position])
     }
+//    fun setData(list: List<productInfo>){
+//        productList = list
+//        notifyDataSetChanged()
+//    }
 }

@@ -24,6 +24,8 @@ class StuffInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityStuffInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
         binding.ivBackButton.setOnClickListener {
             finish()
         }
@@ -31,7 +33,7 @@ class StuffInfoActivity : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 intent.getSerializableExtra("information", ProductInfo::class.java)
             } else {
-                intent.getSerializableExtra("key") as ProductInfo
+                intent.getSerializableExtra("key") as ProductInfo // 7주차 ->> ProductEntity 로 바꾸기
             } ?: ProductInfo("null", "null", "null", "0","0")
         binding.tradeTitle.text = data.title
         binding.tvLocation.text = data.residence
