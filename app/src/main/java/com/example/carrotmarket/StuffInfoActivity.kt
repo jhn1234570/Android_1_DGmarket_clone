@@ -44,11 +44,38 @@ class StuffInfoActivity : AppCompatActivity() {
 
         thread.start()
     }
+    // 쓰레드 사용해서 화면 전환하기
+//    inner class ImageSwiper : Thread(){
+//        override fun run(){
+//            try {
+//                while (true){
+//                    sleep(3000)
+//
+//                    pagerHandler.post{
+//                        var position = binding.computerLayout.currentItem
+//                        if (position==2){
+//                            position=0
+//                        } else{
+//                            position++
+//                        }
+//
+//                        binding.computerLayout.currentItem = position
+//                    }
+//                }
+//            }catch (e: InterruptedException){
+//                Log.d("INTERRUPT","쓰레드 종료")
+//                interrupt()
+//            }
+//        }
+//
+//    }
+
+    //Runnable 사용해서 화면 전환하기
     inner class ImageSwiper : Runnable{
         override fun run(){
             try {
                 while (true){
-                    Thread.sleep(3000)
+                    Thread.sleep(3000) //runnable 사용할려면 Thread. 붙이기
 
                     pagerHandler.post{
                         var position = binding.computerLayout.currentItem
@@ -63,11 +90,14 @@ class StuffInfoActivity : AppCompatActivity() {
                 }
             }catch (e: InterruptedException){
                 Log.d("INTERRUPT","쓰레드 종료")
-                Thread.currentThread().interrupt()
+                Thread.currentThread().interrupt() //마지막줄에 Thread.currentThread() 작성하기 ->> 스레드가 가능한 한 빨리 InterruptedException을 다시 발생시키기 위해서
             }
         }
 
     }
+
+
+
 
 
     override fun onDestroy() {
