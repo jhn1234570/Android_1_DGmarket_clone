@@ -1,20 +1,19 @@
 // 패키지 오류가 나는 경우 각자 프로젝트 명에 맞게 패키지 이름을 수정해주세요!
 package com.example.carrotmarket
 
-import ProductInfo
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.carrotmarket.databinding.ItemHomeProductBinding
 
-class ProductAdapter(val productList: ArrayList<ProductInfo>) : // Arraylist 대신 그냥 list 넣음
+class ProductAdapter(var productList: List<ProductEntity>) : // Arraylist 대신 그냥 list 넣음. 그리고 val 이 아니라 var productList임
     RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
 
     private lateinit var itemClickListener: OnItemClickListener
 
     // TODO: 인터페이스에서 제공하는 추상 메서드는 무엇이 있을까요?
     interface OnItemClickListener {
-        fun onItemClick(productInfo: ProductInfo)
+        fun onItemClick(productEntity: ProductEntity)
     }
 
     fun setOnItemClickListener(onItemClickListener: OnItemClickListener) {
@@ -27,15 +26,15 @@ class ProductAdapter(val productList: ArrayList<ProductInfo>) : // Arraylist 대
     */
     inner class ViewHolder(val binding: ItemHomeProductBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(productInfo: ProductInfo) {
+        fun bind(productList: ProductEntity) {
             // TODO: item_home_product.xml 에 작성한 View와 productInfo 클래스와 binding 시키기
-            binding.tvWannaTrade.text = productInfo.title // 이제 ProductInfo에서 binding 한거 가져와서 textview에 바인딩 하기
-            binding.tvUserResidence.text = productInfo.residence // 7주차 ->> productentity 사용
-            binding.tvPrice.text = productInfo.price
-            binding.tvBuyerComment.text = productInfo.comment
-            binding.tvUserLike.text = productInfo.like
+            binding.tvWannaTrade.text = productList.title // 이제 ProductInfo에서 binding 한거 가져와서 textview에 바인딩 하기
+            binding.tvUserResidence.text = productList.residence // 7주차 ->> productentity 사용
+            binding.tvPrice.text = productList.price
+            binding.tvBuyerComment.text = productList.comment
+            binding.tvUserLike.text = productList.like
             binding.item1Layout.setOnClickListener{
-                itemClickListener.onItemClick(productInfo)
+                itemClickListener.onItemClick(productList)
             }
             // TODO: 클릭 이벤트를 구현하기 위해서 어떤 코드를 작성해야 할까요?
 
@@ -48,15 +47,17 @@ class ProductAdapter(val productList: ArrayList<ProductInfo>) : // Arraylist 대
         return ViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = productList.size
+    override fun getItemCount(): Int{
+        return productList.size
+    }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // 해석: holder의 타입이 위에서 구현한 ViewHolder 클래스이므로, 해당 클래스의 bind 함수를 실행.
         // 이 때 매개변수로 productList라는 ArrayList의 position에 위치하는 항목을 넘겨준다.
         holder.bind(productList[position])
     }
-//    fun setData(list: List<productInfo>){
-//        productList = list
-//        notifyDataSetChanged()
-//    }
+    fun setData(list: List<ProductEntity>){
+        productList = list
+        notifyDataSetChanged()
+    }
 }
